@@ -3,7 +3,6 @@ const app = express();
 app.use(express.json());
 const mongoose = require('mongoose')
 const cors = require("cors");
-app.use(cors());
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 // app.set("view engine", "ejs");
@@ -16,6 +15,7 @@ const JWT_SECRET =
 
 
 const mongoUrl = "mongodb+srv://manologin:portmano@cluster0.nzqyke9.mongodb.net/?retryWrites=true&w=majority"
+app.use(cors());
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true
