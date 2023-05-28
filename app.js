@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(cors());
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 
 
 
@@ -190,17 +190,17 @@ app.get("/getAllUser", async (req, res) => {
     }
 });
 
-app.post("/deleteUser", async (req, res) => {
-    const { userid } = req.body;
-    try {
-        User.deleteOne({ _id: userid }, function (err, res) {
-            console.log(err);
-        });
-        res.send({ status: "Ok", data: "Deleted" });
-    } catch (error) {
-        console.log(error);
-    }
-});
+// app.post("/deleteUser", async (req, res) => {
+//     const { userid } = req.body;
+//     try {
+//         User.deleteOne({ _id: userid }, function (err, res) {
+//             console.log(err);
+//         });
+//         res.send({ status: "Ok", data: "Deleted" });
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
 
 app.listen(5000, () => {
     console.log("Server Started 001");
