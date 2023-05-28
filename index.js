@@ -25,7 +25,10 @@ require("./userDetails");
 
 const User = mongoose.model("UserInfo");
 
-
+app.get("/", function (req, res) {
+    res.send("Hi")
+    console.log("hi")
+})
 app.post("/register", async (req, res) => {
     const { fname, lname, email, password, userType } = req.body;
 
